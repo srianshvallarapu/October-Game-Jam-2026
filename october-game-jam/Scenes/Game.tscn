@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://2v83bu42rt3l"]
+
+[ext_resource type="Script" uid="uid://dn4fqadhmiv0l" path="res://Scripts/ship.gd" id="2_gl6un"]
+
+[sub_resource type="Gradient" id="Gradient_iukft"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uf61"]
+gradient = SubResource("Gradient_iukft")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aaqdl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uf61"]
+radius = 50.039986
+
+[sub_resource type="GDScript" id="GDScript_iukft"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hjoc7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjoc7"]
+radius = 11.045361
+
+[node name="Node2D" type="Node2D" unique_id=1483308933]
+position = Vector2(231, 287)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=804470460]
+position = Vector2(296, 102.49997)
+scale = Vector2(23.78125, 14.578124)
+texture = SubResource("GradientTexture2D_4uf61")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=712776587]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=808012054]
+position = Vector2(3.8146973e-06, -3.8146973e-06)
+scale = Vector2(103.875, 107.652275)
+texture = SubResource("PlaceholderTexture2D_aaqdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1241658120]
+shape = SubResource("CircleShape2D_4uf61")
+
+[node name="Thingy" type="Node2D" parent="StaticBody2D" unique_id=1541366797]
+script = SubResource("GDScript_iukft")
+
+[node name="Ship" type="Area2D" parent="StaticBody2D/Thingy" unique_id=21965123]
+script = ExtResource("2_gl6un")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Thingy/Ship" unique_id=1267936866]
+position = Vector2(0, -6.67572e-06)
+scale = Vector2(29.5, 26.500011)
+texture = SubResource("PlaceholderTexture2D_hjoc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Thingy/Ship" unique_id=1649173234]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_hjoc7")
+
+[node name="Front" type="Marker2D" parent="StaticBody2D/Thingy/Ship" unique_id=2124302467]
+position = Vector2(13, 0)
+
+[node name="Background Object" type="StaticBody2D" parent="." unique_id=850622036]
